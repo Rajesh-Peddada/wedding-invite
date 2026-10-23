@@ -29,6 +29,7 @@ a { color: inherit; }
 .thin-frame::after { bottom: -8px; left: 50%; transform: translateX(-50%); }
 .watercolor-frame { position: absolute; inset: 25px; display: block; width: calc(100% - 50px); height: calc(100% - 50px); pointer-events: none; z-index: 1; }
 .watercolor-frame img { display: block; width: 100%; height: 100%; object-fit: fill; }
+.mobile-frame { display: none; }
 .blessing-row { position: absolute; top: clamp(65px, 6.5vw, 108px); left: 50%; z-index: 3; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; width: min(680px, calc(100% - 90px)); transform: translateX(-50%); color: var(--vermilion); text-align: center; }
 .blessing-row p { margin: 0; font-family: "Noto Serif Telugu", "Nirmala UI", serif; font-size: clamp(15px, 2vw, 21px); font-weight: 600; text-shadow: 0 1px 0 var(--paper), 0 0 8px var(--paper); white-space: nowrap; }
 .ganesha-mark { position: relative; top: -20px; display: block; width: 140px; height: auto; margin: 0 auto 10px; }
@@ -137,8 +138,6 @@ h2 em { color: var(--vermilion); font-weight: 500; }
 @media (max-width: 560px) {
   .hero { min-height: 800px; padding: 50px 17px 35px; }
   .thin-frame { inset: 13px; }
-  .watercolor-frame { inset: 13px 13px auto; width: calc(100% - 26px); height: auto; }
-  .watercolor-frame img { height: auto; object-fit: contain; }
   .blessing-row { top: 63px; width: calc(100% - 40px); }
   .blessing-row p { font-size: clamp(12px, 3.5vw, 16px); }
   .ganesha-mark { top: -12px; width: 108px; height: auto; margin-bottom: 8px; }
@@ -165,8 +164,30 @@ h2 em { color: var(--vermilion); font-weight: 500; }
   .rsvp-lotus { right: -34px; bottom: -40px; width: 120px; opacity: .1; }
 }
 @media (min-width: 561px) and (max-width: 760px) {
-  .watercolor-frame { inset: 13px 13px auto; width: calc(100% - 26px); height: auto; }
-  .watercolor-frame img { height: auto; object-fit: contain; }
+}
+@media (max-width: 760px) {
+  .watercolor-frame { display: none; }
+  .mobile-frame { position: absolute; inset: 13px; display: block; pointer-events: none; z-index: 1; }
+  .mobile-frame-corner {
+    position: absolute;
+    width: clamp(82px, 25vw, 118px);
+    aspect-ratio: 25 / 26;
+    background-image: url("assets/botanical-watercolor-frame-corners.webp");
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    opacity: .92;
+  }
+  .mobile-frame-top-left { top: 0; left: 0; background-position: 0 0; }
+  .mobile-frame-top-right { top: 0; right: 0; background-position: 100% 0; }
+  .mobile-frame-bottom-left { bottom: 0; left: 0; background-position: 0 100%; }
+  .mobile-frame-bottom-right { right: 0; bottom: 0; background-position: 100% 100%; }
+  .eyebrow { color: #44563d; font-size: 11px; font-weight: 800; letter-spacing: .11em; }
+  .section-eyebrow { color: #44563d; font-size: 11.5px; line-height: 1.5; letter-spacing: .1em; }
+  .couple-detail { color: #59483d; font-size: 15.5px; font-weight: 600; line-height: 1.45; }
+  .hero-footnote { color: #59483d; font-size: 14px; font-weight: 600; line-height: 1.4; }
+  .detail-card p:not(.card-label) { color: #59483d; font-size: 15px; font-weight: 500; line-height: 1.6; }
+  .detail-card .dinner-note { color: #514237; font-size: 15px; font-weight: 600; }
+  .map-caption { color: #59483d; font-size: 17px; font-weight: 600; line-height: 1.45; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

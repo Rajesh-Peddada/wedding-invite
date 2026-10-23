@@ -82,6 +82,10 @@
     tryAutoplay();
     window.addEventListener('load', tryAutoplay, { once: true });
     window.addEventListener('pageshow', tryAutoplay);
+    document.addEventListener('pointerdown', (event) => {
+      if (!musicButton.contains(event.target)) tryAutoplay();
+    }, { once: true, passive: true });
+    document.addEventListener('keydown', tryAutoplay, { once: true });
   }
 
   const form = byId('rsvpForm');
