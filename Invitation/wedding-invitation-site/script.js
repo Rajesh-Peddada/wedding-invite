@@ -71,7 +71,7 @@
     musicButton.addEventListener('click', async () => {
       if (audio.paused) {
         pausedByViewer = false;
-        try { await audio.play(); } catch (_) { /* Autoplay may require a guest gesture. */ }
+        try { await audio.play(); } catch (_) { /* Keep the play control available if playback fails. */ }
       } else {
         pausedByViewer = true;
         audio.pause();

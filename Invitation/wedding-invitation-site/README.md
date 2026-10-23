@@ -1,6 +1,6 @@
 # Wedding invitation website — editable first iteration
 
-A mobile-first, traditional South Indian wedding invitation made with plain HTML, CSS and JavaScript. No Node.js, framework, paid service, or build step is required. Artwork is layered PNG so you can replace each element without editing the code.
+A mobile-first, traditional South Indian wedding invitation made with plain HTML, CSS and JavaScript. No Node.js, framework, paid service, or build step is required. The page serves optimized WebP artwork; the original PNG files remain available as editable masters.
 
 ## Edit your invitation
 
@@ -11,14 +11,16 @@ A mobile-first, traditional South Indian wedding invitation made with plain HTML
 
 All visible invitation wording is in `config.js`; layout and typography are in `styles.css`; RSVP and map/music behavior are in `script.js`.
 
-## Replace the PNG artwork
+## Replace the artwork
 
-Replace these transparent PNG files with your own artwork (keeping the same filename is easiest):
+The page loads these optimized WebP files:
 
-- `assets/ceremonial-toran.png` — the standalone marigold/jasmine garland and brass-bell artwork.
-- `assets/botanical-lotus-corner.png` — the lotus and leaf artwork used in the lower corners. The right side is mirrored in CSS.
-- `assets/botanical-watercolor-frame.png` — the full transparent watercolor frame, fitted inside the hero's gold border.
-- `assets/ganesha.png` — the enhanced transparent gold-line Ganesha illustration.
+- `assets/botanical-lotus-corner.webp` — the lotus and leaf artwork used in the lower corners. The right side is mirrored in CSS.
+- `assets/botanical-watercolor-frame.webp` — the full transparent watercolor frame, fitted inside the hero's gold border.
+- `assets/ganesha.webp` — the transparent gold-line Ganesha illustration.
+- `assets/venkateswara-devotional-banner.webp` — the devotional banner above the event details.
+
+Original PNG masters are kept alongside these files. If you replace an illustration, update the corresponding WebP file too so the page continues to use the optimized version. The standalone `assets/ceremonial-toran.png` is available but is not currently displayed on the page.
 
 The three Telugu blessings are editable HTML text at the top of the invitation. The artwork library in `../wedding-invitation-artwork/` contains the reusable toranam SVG and supplied Ganesha PNG.
 
@@ -26,7 +28,7 @@ For best results, use transparent PNGs with generous empty space around the deco
 
 ## Add background music
 
-The invitation uses `assets/wedding-music.mp3`. Playback is attempted when the page loads, and guests can use the discreet bottom-corner play/pause control. Some browsers block audio autoplay until a guest taps Play.
+The invitation uses `assets/wedding-music.mp3` and attempts autoplay. Browsers may block autoplay until a guest interacts with the page; the bottom-corner Play control is available in that case.
 
 ## Preview locally
 
