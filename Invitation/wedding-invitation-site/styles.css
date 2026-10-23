@@ -40,7 +40,7 @@ a { color: inherit; }
 .intro-kicker { margin: 18px 0 12px; font-family: var(--serif); font-size: clamp(18px, 2.4vw, 23px); font-style: italic; color: var(--muted); }
 .names { display: flex; flex-direction: column; align-items: center; color: var(--vermilion); font-family: var(--script); font-size: clamp(62px, 9vw, 100px); line-height: .81; }
 .partner-name { display: block; }
-.couple-detail { max-width: 610px; margin: 8px auto 0; color: var(--muted); font-family: var(--serif); font-size: clamp(14px, 1.7vw, 17px); line-height: 1.35; }
+.couple-detail { max-width: 610px; margin: 8px auto 0; color: var(--muted); font-family: var(--serif); font-size: clamp(14px, 1.7vw, 17px); line-height: 1.35; text-align: center; text-indent: 0; }
 .ampersand { display: inline-block; padding: 8px 0 3px; color: var(--gold); font-family: var(--serif); font-size: 35px; font-style: italic; line-height: 1; }
 .gold-rule { display: flex; align-items: center; gap: 12px; width: 130px; margin: 26px auto 18px; color: var(--gold); font-size: 10px; }
 .gold-rule::before, .gold-rule::after { content: ""; flex: 1; height: 1px; background: var(--gold-pale); }
@@ -138,10 +138,10 @@ h2 em { color: var(--vermilion); font-weight: 500; }
 @media (max-width: 560px) {
   .hero { min-height: 800px; padding: 50px 17px 35px; }
   .thin-frame { inset: 13px; }
-  .blessing-row { top: 63px; width: calc(100% - 40px); }
+  .blessing-row { top: clamp(118px, 30vw, 140px); width: calc(100% - 40px); }
   .blessing-row p { font-size: clamp(12px, 3.5vw, 16px); }
   .ganesha-mark { top: -12px; width: 108px; height: auto; margin-bottom: 8px; }
-  .hero-copy { margin-top: 108px; margin-bottom: 93px; }
+  .hero-copy { margin-top: 108px; margin-bottom: 190px; }
   .auspicious { font-size: 31px; }
   .intro-kicker { margin-top: 17px; font-size: 19px; }
   .names { font-size: clamp(66px, 16vw, 84px); }
@@ -175,19 +175,22 @@ h2 em { color: var(--vermilion); font-weight: 500; }
   .mobile-frame-top-right { top: 0; right: 0; background-position: 100% 0; }
   .mobile-frame-bottom-left { bottom: 0; left: 0; background-position: 0 100%; }
   .mobile-frame-bottom-right { right: 0; bottom: 0; background-position: 100% 100%; }
-  .eyebrow { color: #3f5038; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
-  .section-eyebrow { color: #3f5038; font-size: 13px; line-height: 1.5; letter-spacing: .04em; }
-  .couple-detail { color: #514137; font-size: clamp(16px, 4.5vw, 18px); font-weight: 700; line-height: 1.45; }
-  .hero-footnote { bottom: 22px; left: 24px; right: 24px; color: #514137; font-size: 16px; font-weight: 700; line-height: 1.35; }
-  .plaque-label { color: #40533a; font-size: 10px; letter-spacing: .1em; }
-  .detail-card p:not(.card-label) { color: #514137; font-size: 17px; font-weight: 600; line-height: 1.55; }
-  .detail-card .dinner-note { color: #49392f; font-size: 17px; font-weight: 700; }
-  .card-label { color: #40533a; font-size: 11px; letter-spacing: .14em; }
-  .text-link { font-size: 13px; }
-  .map-caption { color: #514137; font-size: 18px; font-weight: 700; line-height: 1.45; }
+  .eyebrow { color: #52634b; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
+  .section-eyebrow { color: #52634b; font-size: 13px; font-weight: 600; line-height: 1.5; letter-spacing: .04em; }
+  .details-section h2, .details-section h2 em { font-weight: 400; }
+  .details-section .section-copy { font-weight: 400; }
+  .details-section .detail-card h3 { font-weight: 500; }
+  .couple-detail { color: #625449; font-size: clamp(16px, 4.5vw, 18px); font-weight: 600; line-height: 1.45; }
+  .hero-footnote { bottom: clamp(125px, 35vw, 150px); left: 24px; right: 24px; color: #625449; font-size: 16px; font-weight: 600; line-height: 1.35; }
+  .plaque-label { color: #52634b; font-size: 10px; font-weight: 600; letter-spacing: .1em; }
+  .detail-card p:not(.card-label) { color: #625449; font-size: 17px; font-weight: 400; line-height: 1.55; }
+  .detail-card .dinner-note { color: #5b4c41; font-size: 17px; font-weight: 500; }
+  .card-label { color: #52634b; font-size: 11px; font-weight: 500; letter-spacing: .14em; }
+  .text-link { font-size: 13px; font-weight: 600; }
+  .map-caption { color: #625449; font-size: 18px; font-weight: 500; line-height: 1.45; }
   .scroll-cue { font-size: 11px; letter-spacing: .1em; }
-  #rsvpForm > label:not(.honeypot) { font-size: 13px; }
-  .button { font-size: 13px; }
+  #rsvpForm > label:not(.honeypot) { font-size: 13px; font-weight: 600; }
+  .button { font-size: 13px; font-weight: 600; }
   .form-note { font-size: 12px; }
   .map-placeholder p { font-size: 13px; }
   .site-footer .footer-small { font-size: 12px; }
