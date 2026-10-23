@@ -17,6 +17,7 @@ The page loads these optimized WebP files:
 
 - `assets/botanical-lotus-corner.webp` — the lotus and leaf artwork used in the lower corners. The right side is mirrored in CSS.
 - `assets/botanical-watercolor-frame.webp` — the full transparent watercolor frame, fitted inside the hero's gold border.
+- `assets/botanical-watercolor-frame-mobile.webp` — a proportionally cropped top decoration selected on screens up to 760 px wide.
 - `assets/ganesha.webp` — the transparent gold-line Ganesha illustration.
 - `assets/venkateswara-devotional-banner.webp` — the devotional banner above the event details.
 
