@@ -51,7 +51,7 @@
   const musicButton = byId('musicToggle');
   const musicIcon = byId('musicIcon');
   if (cfg.audioFile) {
-    audio.src = cfg.audioFile;
+    if (audio.getAttribute('src') !== cfg.audioFile) audio.src = cfg.audioFile;
     musicControls.hidden = false;
     audio.addEventListener('error', () => { musicControls.hidden = true; });
     const updateMusicControl = () => {

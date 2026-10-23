@@ -27,7 +27,7 @@ window.WEDDING = {
   mapCoordinates: "16.4650476,80.6230566",
   mapZoom: 15,
   footerLine: "A day of vows, a lifetime of togetherness.",
-  // Add the MP3 file at assets/wedding-music.mp3. Browsers require a guest to tap Play.
+  // Add the MP3 file at assets/wedding-music.mp3. Autoplay is attempted when the page opens.
   audioFile: "Invitation/wedding-invitation-site/assets/wedding-music.mp3",
   // Paste your deployed Google Apps Script Web App URL here after following README.md.
   // Leave empty for local preview mode (RSVP animation works, but responses are NOT saved).
