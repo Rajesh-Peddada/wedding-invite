@@ -124,7 +124,11 @@
   </main>
 
   <div id="musicControls" class="music-controls" hidden>
-    <button id="musicToggle" class="music-toggle" type="button" aria-label="Play ceremony music" aria-pressed="false" title="Play ceremony music"><span id="musicIcon" class="music-dot" aria-hidden="true">▶</span></button>
+    <button id="musicToggle" class="music-toggle" type="button" aria-label="Play background music" aria-pressed="false" title="Play background music">
+      <span class="music-note" aria-hidden="true">♫</span>
+      <span class="music-label" aria-hidden="true">Music</span>
+      <span id="musicIcon" class="music-state" aria-hidden="true">▶</span>
+    </button>
   </div>
   <audio id="weddingAudio" src="Invitation/wedding-invitation-site/assets/wedding-music.mp3" autoplay preload="auto" loop></audio>
   <script src="Invitation/wedding-invitation-site/config.js"></script>

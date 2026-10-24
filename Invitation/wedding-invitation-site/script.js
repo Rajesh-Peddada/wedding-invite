@@ -52,13 +52,16 @@
   const musicIcon = byId('musicIcon');
   if (cfg.audioFile) {
     if (audio.getAttribute('src') !== cfg.audioFile) audio.src = cfg.audioFile;
+    audio.autoplay = true;
+    audio.preload = 'auto';
     musicControls.hidden = false;
     audio.addEventListener('error', () => { musicControls.hidden = true; });
     const updateMusicControl = () => {
       const isPlaying = !audio.paused;
       musicIcon.textContent = isPlaying ? 'Ⅱ' : '▶';
-      musicButton.setAttribute('aria-label', isPlaying ? 'Pause ceremony music' : 'Play ceremony music');
-      musicButton.setAttribute('title', isPlaying ? 'Pause ceremony music' : 'Play ceremony music');
+      musicButton.classList.toggle('is-playing', isPlaying);
+      musicButton.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+      musicButton.setAttribute('title', isPlaying ? 'Pause background music' : 'Play background music');
       musicButton.setAttribute('aria-pressed', String(isPlaying));
     };
     let pausedByViewer = false;
@@ -68,6 +71,8 @@
     };
     audio.addEventListener('play', updateMusicControl);
     audio.addEventListener('pause', updateMusicControl);
+    audio.addEventListener('loadeddata', tryAutoplay, { once: true });
+    audio.addEventListener('canplay', tryAutoplay, { once: true });
     musicButton.addEventListener('click', async () => {
       if (audio.paused) {
         pausedByViewer = false;

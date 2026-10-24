@@ -118,16 +118,22 @@ h2 em { color: var(--vermilion); font-weight: 500; }
 .site-footer .footer-small { margin-top: 15px; font-family: var(--sans); font-size: 10px; color: #877462; letter-spacing: .04em; }
 .music-controls { position: fixed; right: 18px; bottom: 18px; z-index: 10; display: flex; align-items: center; gap: 8px; }
 .music-controls[hidden] { display: none; }
-.music-toggle { display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border: 1px solid var(--gold-pale); border-radius: 50%; background: rgba(251, 246, 237, .96); box-shadow: 0 8px 24px rgba(54, 38, 23, .12); color: var(--vermilion); cursor: pointer; backdrop-filter: blur(10px); }
+.music-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 100px; height: 46px; padding: 0 13px; border: 1px solid var(--gold-pale); border-radius: 999px; background: rgba(251, 246, 237, .97); box-shadow: 0 8px 24px rgba(54, 38, 23, .12); color: var(--vermilion); cursor: pointer; backdrop-filter: blur(10px); transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.music-toggle:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(54, 38, 23, .17); }
+.music-toggle:active { transform: scale(.96); }
 .music-toggle:focus-visible { outline: 2px solid var(--vermilion); outline-offset: 3px; }
-.music-dot { display: block; font-size: 16px; line-height: 1; }
+.music-note { font-family: var(--serif); font-size: 21px; line-height: 1; }
+.music-label { font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.music-state { display: grid; place-items: center; width: 16px; height: 20px; font-size: 14px; line-height: 1; }
+.music-toggle.is-playing .music-note { animation: music-bob .75s ease-in-out infinite alternate; }
 @media (max-width: 560px) {
   .music-controls { right: 12px; bottom: 12px; gap: 6px; }
-  .music-toggle { width: 42px; height: 42px; }
+  .music-toggle { min-width: 96px; height: 42px; gap: 7px; padding: 0 11px; }
 }
 @keyframes paintLine { to { stroke-dashoffset: 0; } }
 @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(155,62,50,.25); } 50% { box-shadow: 0 0 0 6px rgba(155,62,50,0); } }
+@keyframes music-bob { from { transform: rotate(-9deg) translateY(1px); } to { transform: rotate(9deg) translateY(-1px); } }
 @media (min-width: 800px) {
   .hero { min-height: 960px; }
   .hero-copy { margin-top: 155px; margin-bottom: 65px; }
